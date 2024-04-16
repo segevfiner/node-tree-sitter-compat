@@ -1,7 +1,7 @@
 {
   "name": "tree-sitter-compat",
   "version": "0.1.0",
-  "description": "Compatibility for old v8 API based language bindings for node-tree-sitter",
+  "description": "Compatibility module for old v8 API based language bindings for node-tree-sitter",
   "types": "./index.d.ts",
   "main": "./index.js",
   "exports": {
@@ -30,5 +30,11 @@
     "prebuild": "^13.0.0",
     "tree-sitter": "^0.21.1",
     "tree-sitter-javascript": "0.20.4"
-  }
+  },
+  "files": [
+    "binding.gyp",
+    "index.js",
+    "index.d.ts",
+    "src/**"
+  ]
 }
