@@ -12,7 +12,11 @@
     "install": "prebuild-install || node-gyp rebuild",
     "build": "node-gyp build",
     "prebuild": "prebuild -t 18.20.2 -t 20.12.2 --strip",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/segevfiner/node-tree-sitter-compat.git"
   },
   "keywords": [
     "incremental",
@@ -27,9 +31,13 @@
     "node-addon-api": "^8.0.0"
   },
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.12.7",
     "prebuild": "^13.0.0",
     "tree-sitter": "^0.21.1",
-    "tree-sitter-javascript": "0.20.4"
+    "tree-sitter-c": "0.21.0",
+    "tree-sitter-javascript": "0.20.4",
+    "vitest": "^1.5.0"
   },
   "files": [
     "binding.gyp",
