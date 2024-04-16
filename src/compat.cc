@@ -1,6 +1,4 @@
 #include <napi.h>
-// To silence a warning
-#undef NAPI_VERSION
 #include <node.h>
 
 typedef struct TSLanguage TSLanguage;
@@ -85,6 +83,9 @@ static Napi::Object Init(Napi::Env env, Napi::Object exports) {
   Napi::Value modulesVersionValue = versions.As<Napi::Object>()["modules"];
   auto modulesVersion = modulesVersionValue.ToNumber();
 
+  // Since this module uses v8 API, don't allow to load it if is was built
+  // agains't a different Node.js version, a check that would normally be done
+  // by Node.js if the entry point was the classic node addon module entry point
   if (modulesVersion.Int32Value() != NODE_MODULE_VERSION) {
     throw Napi::TypeError::New(env, "The module was compiled against a different Node.js version");
   }

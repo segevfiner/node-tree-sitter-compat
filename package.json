@@ -1,13 +1,23 @@
 {
   "name": "tree-sitter-compat",
   "version": "0.1.0",
-  "description": "Compatibility for v8 API based language bindings for node-tree-sitter",
-  "main": "index.js",
+  "description": "Compatibility for old v8 API based language bindings for node-tree-sitter",
+  "types": "./index.d.ts",
+  "main": "./index.js",
+  "exports": {
+    "types": "./index.d.ts",
+    "default": "./index.js"
+  },
   "scripts": {
     "install": "node-gyp-build",
     "build": "node-gyp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "incremental",
+    "parsing",
+    "tree-sitter"
+  ],
   "author": "Segev Finer <segev208@gmail.com>",
   "license": "MIT",
   "node-gyp": true,
