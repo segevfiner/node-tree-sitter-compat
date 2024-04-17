@@ -1,0 +1,59 @@
+name: Prebuild
+
+on:
+  push:
+    branches:
+    - main
+    tags:
+    - v*
+  pull_request:
+
+jobs:
+  prebuild:
+    name: Prebuild
+
+    strategy:
+      matrix:
+        os: [ubuntu-20.04, windows-2022, macos-13]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+    - run: npm ci
+
+    - name: Prebuild
+      run: npm run build:prebuild
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: prebuilds-${{ matrix.os }}
+        path: prebuilds
+
+  upload:
+    name: Upload prebuilds
+    runs-on: ubuntu-20.04
+    needs: prebuild
+    if: github.ref_type == 'tag'
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+    - run: npm ci
+
+    - uses: actions/download-artifact@v4
+      with:
+        pattern: prebuilds-*
+        merge-multiple: true
+        path: prebuilds
+
+    - name: Upload
+      run: npx prebuild --upload-all ${{ secrets.GITHUB_TOKEN }}
