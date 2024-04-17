@@ -11,7 +11,7 @@
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
     "build": "node-gyp build",
-    "prebuild": "prebuild -t 18.20.2 -t 20.12.2 --strip",
+    "build:prebuild": "prebuild -t 18.20.2 -t 20.12.2 --strip",
     "test": "vitest"
   },
   "repository": {
