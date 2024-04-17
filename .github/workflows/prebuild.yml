@@ -44,6 +44,9 @@ jobs:
     needs: prebuild
     if: github.ref_type == 'tag'
 
+    permissions:
+      contents: write
+
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js 20
