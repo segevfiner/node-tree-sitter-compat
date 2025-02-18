@@ -39,7 +39,7 @@
     "tree-sitter": "^0.21.1",
     "tree-sitter-c": "0.21.0",
     "tree-sitter-javascript": "0.20.4",
-    "vitest": "^2.0.3"
+    "vitest": "^3.0.6"
   },
   "files": [
     "binding.gyp",
