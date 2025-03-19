@@ -41,7 +41,7 @@ jobs:
           path: prebuilds
 
       - name: Publish prebuilds
-        run: pnpm prebuild --upload-all ${{ secrets.GITHUB_TOKEN }}
+        run: npx prebuild --upload-all ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish
         run: npm publish --access public --provenance
