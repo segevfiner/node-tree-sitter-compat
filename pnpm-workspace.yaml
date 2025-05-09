@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - es5-ext
+  - esbuild
+  - tree-sitter
+  - tree-sitter-c
+  - tree-sitter-javascript
