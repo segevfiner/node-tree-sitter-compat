@@ -1,7 +1,8 @@
 {
   "name": "tree-sitter-compat",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Compatibility module for old v8 API based language bindings for node-tree-sitter",
+  "type": "commonjs",
   "types": "./index.d.ts",
   "main": "./index.js",
   "exports": {
