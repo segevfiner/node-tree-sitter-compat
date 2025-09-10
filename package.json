@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.6",
-    "@types/node": "^20.19.9",
+    "@types/node": "^20.19.13",
     "prebuild": "^13.0.1",
     "tree-sitter": "^0.21.1",
     "tree-sitter-c": "0.21.0",
