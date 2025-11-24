@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-compat",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Compatibility module for old v8 API based language bindings for node-tree-sitter",
   "type": "commonjs",
   "types": "./index.d.ts",
@@ -12,7 +12,7 @@
   "scripts": {
     "install": "prebuild-install || node-gyp rebuild",
     "build": "node-gyp build",
-    "build:prebuild": "prebuild -t 18.20.7 -t 20.19.0 -t 22.14.0 --strip",
+    "build:prebuild": "prebuild -t 18.20.7 -t 20.19.5 -t 22.21.1 -t 24.11.0 --strip",
     "rebuild": "node-gyp rebuild",
     "test": "vitest"
   },
