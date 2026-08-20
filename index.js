@@ -1,2 +1,3 @@
-const binding = require('bindings')('tree_sitter_compat.node');
+const pkgPrebuilds = require('pkg-prebuilds');
+const binding = pkgPrebuilds(__dirname, require('./binding-options'));
 exports.convertLanguage = binding.convertLanguage;

@@ -42,8 +42,5 @@ jobs:
           merge-multiple: true
           path: prebuilds
 
-      - name: Publish prebuilds
-        run: pnpm prebuild --upload-all ${{ secrets.GITHUB_TOKEN }}
-
       - name: Publish
         run: pnpm publish --access public --provenance --no-git-checks
