@@ -1,3 +1,9 @@
+allowBuilds:
+  es5-ext: true
+  esbuild: true
+  tree-sitter: true
+  tree-sitter-c: true
+  tree-sitter-javascript: true
 onlyBuiltDependencies:
   - es5-ext
   - esbuild
