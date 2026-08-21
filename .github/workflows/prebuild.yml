@@ -30,13 +30,13 @@ jobs:
 
     - name: Prebuild
       run: |
-        node-gyp build
+        pnpm node-gyp build
         pnpm pkg-prebuilds-copy --baseDir build/Release --source tree-sitter-compat.node --name=tree-sitter-compat --strip --napi_version=8
 
     - name: Prebuild (arm64)
       if: startsWith(matrix.runs-on, 'macos')
       run: |
-        node-gyp build --arch arm64
+        pnpm node-gyp build --arch arm64
         pnpm pkg-prebuilds-copy --baseDir build/Release --source tree-sitter-compat.node --name=tree-sitter-compat --strip --napi_version=8 --arch arm64
 
     - uses: actions/upload-artifact@v7
