@@ -1,7 +1,7 @@
 {
   'targets': [
     {
-      'target_name': 'tree_sitter_compat',
+      'target_name': 'tree-sitter-compat',
       'sources': [ 'src/compat.cc' ],
       'dependencies': [
         "<!(node -p \"require('node-addon-api').targets\"):node_addon_api_except",
