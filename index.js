@@ -1,3 +1,2 @@
-const pkgPrebuilds = require('pkg-prebuilds');
-const binding = pkgPrebuilds(__dirname, require('./binding-options'));
+const binding = require('node-gyp-build')(__dirname);
 exports.convertLanguage = binding.convertLanguage;

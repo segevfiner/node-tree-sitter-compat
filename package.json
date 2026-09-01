@@ -10,9 +10,11 @@
     "default": "./index.js"
   },
   "scripts": {
-    "install": "pkg-prebuilds-verify ./binding-options.js || node-gyp rebuild",
+    "install": "node-gyp-build",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
+    "prebuild": "prebuildify --napi=false --target 22.0.0 --target 24.0.0 --strip",
+    "prebuild:arm64": "prebuildify --napi=false --target 22.0.0 --target 24.0.0 --arch arm64 --strip",
     "test": "vitest"
   },
   "repository": {
@@ -31,25 +33,19 @@
   "dependencies": {
     "node-addon-api": "^8.9.2",
     "node-gyp": "^13.0.1",
-    "pkg-prebuilds": "^1.1.0"
+    "node-gyp-build": "^4.8.4"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.6",
     "@types/node": "^20.19.43",
+    "prebuildify": "^6.0.1",
     "tree-sitter": "^0.21.1",
     "tree-sitter-c": "0.21.0",
     "tree-sitter-javascript": "0.20.4",
     "vitest": "^4.1.11"
   },
-  "binary": {
-    "napi_versions": [
-      8
-    ]
-  },
   "files": [
     "binding.gyp",
-    "binding-options.js",
-    "binding-options.d.ts",
     "index.js",
     "index.d.ts",
     "src/**",
