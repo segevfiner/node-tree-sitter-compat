@@ -13,8 +13,8 @@
     "install": "node-gyp-build",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
-    "prebuild": "prebuildify --target 22.0.0 --target 24.0.0 --strip",
-    "prebuild:arm64": "prebuildify --target 22.0.0 --target 24.0.0 --arch arm64 --strip",
+    "prebuild": "prebuildify --napi=false --target 22.0.0 --target 24.0.0 --strip",
+    "prebuild:arm64": "prebuildify --napi=false --target 22.0.0 --target 24.0.0 --arch arm64 --strip",
     "test": "vitest"
   },
   "repository": {
